@@ -10,9 +10,8 @@ function App() {
       try {
         const response = await fetch('https://gateway-ipa.eastus.cloudapp.azure.com/data', {
           headers: {
-            'Authorization': 'Bearer YourAccessToken', // Replace with your actual header and token
-            'Content-Type': 'application/json', // Add any other headers as needed
-          },
+            'Ocp-Apim-Subscription-Key': '1193b86901a44fa181cb016bfd85089f'
+            },
         });
         const result = await response.json();
         setData(result);
