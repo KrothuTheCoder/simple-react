@@ -1,35 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 
-function App() {
-  const [data, setData] = useState('');
-
-  useEffect(() => {
-    // Fetch data from C# API
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://gateway-ipa.eastus.cloudapp.azure.com/data', {
-          headers: {
-            'Ocp-Apim-Subscription-Key': '1193b86901a44fa181cb016bfd85089f'
-            },
-        });
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      data: null,
     };
+  }
 
-    fetchData();
-  }, []);
+  componentDidMount() {
+    // Make API call with an extra header
+    fetch('https://gateway-ipa.eastus.cloudapp.azure.com/data', {
+      method: 'GET',
+      headers: {
+        'Ocp-Apim-Subscription-Key': '1193b86901a44fa181cb016bfd85089f'
+      },
+    })
+      .then(response => response.json())
+      .then(data => this.setState({ data }))
+      .catch(error => console.error('Error fetching data:', error));
+  }
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>{data}</h1>
-      </header>
-    </div>
-  );
+  render() {
+    return (
+      <div>
+        <h1>Hello, React!</h1>
+        {this.state.data ? (
+          <div>
+            <p>Data from API:</p>
+            <pre>{JSON.stringify(this.state.data, null, 2)}</pre>
+          </div>
+        ) : (
+          <p>Loading data...</p>
+        )}
+      </div>
+    );
+  }
 }
 
-export default App;
+ReactDOM.render(<App />, document.getElementById('root'));
