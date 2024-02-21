@@ -11,7 +11,7 @@ class Index extends React.Component {
 
   componentDidMount() {
     // Make API call with an extra header
-    fetch('https://gateway-ipa.eastus.cloudapp.azure.com/data', {
+    fetch('https://fd-sandbox.hakabo.com/api/data', {
       method: 'GET',
       headers: {
         'Ocp-Apim-Subscription-Key': '1193b86901a44fa181cb016bfd85089f'
