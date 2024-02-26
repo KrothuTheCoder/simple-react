@@ -1,3 +1,5 @@
 node_modules
-.idea\*
-build\*
+.idea/*
+build/*
+.idea/*
+package-lock.json
