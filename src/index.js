@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {createRoot} from 'react-dom/client'
 import DonkeyComponent from './donkey';
 import DataFetchComponent from './go'; // Import the new compon
