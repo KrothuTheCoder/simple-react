@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
 const DataFetchComponent = () => {
-  // const [apiData, setApiData] = useState('');
-
-  const fetchData = async () => {
-
-    fetch('https://fd-sandbox.hakabo.com/api/data', {
+  const [apiData, setApiData] = useState('');
+    
+    const fetchData = async () => {
+    
+      fetch('https://fd-sandbox.hakabo.com/api/data', {
         method: 'GET',
         headers: {
             'Ocp-Apim-Subscription-Key': '1193b86901a44fa181cb016bfd85089f'
