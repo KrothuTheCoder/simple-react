@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const DataFetchComponent = () => {
-  const [apiData, setApiData] = useState('');
+  // const [apiData, setApiData] = useState('');
 
   const fetchData = async () => {
 
