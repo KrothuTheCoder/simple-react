@@ -9,7 +9,7 @@ const ImageComponent = () => {
     Donkey died<br/>
     Daddy cried<br/>
     Inky Pinky Ponky<br/>
-   <img src='./images/donkey.jpg'/>
+   <img src='./images/donkey.jpg' alt='Daddys Donkey'/>
     </div>
   );
 };
