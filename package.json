@@ -2,8 +2,7 @@
     "name": "react-api-demo",
     "version": "1.0.0",
     "description": "A React application that calls a C# API backend",
-    "main": "src/index.js",
-    "script": "./src/index.js",
+    
     "scripts": {
         "start": "node app.js",
         "build": "react-scripts build",
