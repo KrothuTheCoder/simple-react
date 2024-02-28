@@ -1,14 +1,8 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client'
-import DonkeyComponent from './donkey';
-import DataFetchComponent from './go'; // Import the new compon
-// class Index extends React.Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       data: null,
-//     };
-//   }
+import DonkeyComponent from './components/donkey';
+import DataFetchComponent from './components/go'; // Import the new compon
+
 
 const container = document.getElementById('root');
 const root = createRoot(container);
